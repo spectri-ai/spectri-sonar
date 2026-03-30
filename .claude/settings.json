@@ -1,0 +1,133 @@
+{
+  "hooks": {
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/inject-session-start.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/spec-folder-watchdog.sh",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Write"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/spec-folder-watchdog.sh",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Edit"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/postcommit-review-gate.sh",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/artifact-write-guard.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/spec-folder-edit-guard.sh",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Write"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/artifact-write-guard.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/spec-folder-edit-guard.sh",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Edit"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/bash-write-guard.sh",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/inject-session-start.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/stop-completion-gate.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/inject-session-start.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .spectri/scripts/hooks/inject-user-prompt.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

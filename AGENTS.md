@@ -1,3 +1,7 @@
+<!-- SPECTRI:START -->
+@./SPECTRI.md
+<!-- SPECTRI:END -->
+
 ---
 Date Created: 2026-03-30T00:26:39+0000
 Date Updated: 2026-03-30T00:26:39+0000

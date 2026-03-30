@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash /Users/ostiimac/Forge/primary-vault/04-REPOSITORIES/04-REPOS-Spectri/spectri-sonar/.spectri/scripts/shared/get-timestamp.sh --date)",
+      "Bash(wc -l docs/*.md)",
+      "Bash(SRC=\"/Users/ostiimac/Forge/primary-vault/04-REPOSITORIES/04-REPOS-Spectri/spectri-claude-plugin\")",
+      "Bash(DEST=\"/Users/ostiimac/Library/Mobile Documents/com~apple~CloudDocs/Claude-Bridge/2026-03-30-spectri-plugin-clarity\")",
+      "Bash(__NEW_LINE_d2cfbfddd740f2b3__ cp:*)",
+      "Bash(cp \"$SRC/docs/principles.md\" \"$DEST/02-principles.md\")",
+      "Bash(cp \"$SRC/docs/mechanisms.md\" \"$DEST/03-mechanisms.md\")",
+      "Bash(mv \"2026-03-27-hb-content-workflow-brainstorm\" \"hb-content-workflow-brainstorm-2026-03-27\")",
+      "Bash(mv \"2026-03-27-stream-workspace-brainstorm\" \"stream-workspace-brainstorm-2026-03-27\")",
+      "Bash(mv \"2026-03-30-spectri-sonar-brainstorm\" \"spectri-sonar-brainstorm-2026-03-30\")",
+      "Bash(mv \"2026-03-30-spectri-plugin-clarity\" \"spectri-plugin-clarity-2026-03-30\")",
+      "mcp__pal__chat",
+      "Bash(wc -l *.md)",
+      "Bash(git status:*)",
+      "Bash(git -c:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/ostiimac/Library/Mobile Documents/com~apple~CloudDocs/Claude-Bridge",
+      "/Users/ostiimac/Forge/primary-vault/04-REPOSITORIES/04-REPOS-Spectri/agent-deck/canonical/skills/context-bridge/v1-2026-03-26"
+    ]
+  }
+}

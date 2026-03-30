@@ -1,0 +1,28 @@
+#!/bin/bash
+# Pre-commit hook — delegates to Python implementation via spectri CLI.
+#
+# Checks enforced (see src/spectri_cli/hooks/pre_commit.py):
+#   1. Multi-spec commit detection
+#   2. Implementation summary immutability
+#   3. AGENTS.md enforcement (placeholder)
+#   4. Canonical source protection
+#   5. Implementation summary enforcement
+#   6. Timestamp pattern validation
+#   7. Skill reference validation
+#   8. Work cycle reminders (never blocks)
+#   9. Meta.json validation (warn-only)
+#
+# Bypass all checks: git commit --no-verify
+#
+# Individual bypasses via env vars:
+#   SKIP_MULTI_SPEC_CHECK=1  SKIP_SUMMARY_CHECK=1
+#   SKIP_DEPLOY_CHECK=1      SKIP_TIMESTAMP_CHECK=1
+
+# Use spectri CLI if available, fall back to direct Python invocation
+if command -v spectri &>/dev/null; then
+    exec spectri pre-commit
+elif command -v uv &>/dev/null; then
+    exec uv run python -m spectri_cli.hooks.pre_commit
+else
+    exec python3 -m spectri_cli.hooks.pre_commit
+fi
